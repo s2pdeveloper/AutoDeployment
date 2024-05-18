@@ -1,6 +1,7 @@
 from config.mongo import mongo_client
 from models.dto import ChangePassword, Login
 from models.schemas import User
+from utils.mailer import sendEmail
 db = mongo_client.get_database()
 from fastapi import HTTPException
 from utils.success import success
@@ -10,6 +11,8 @@ class UserService:
         pass
     async def login(self,data:Login):
         print("inside user service-----")
+        sendEmail("OTP","poojadabi@s2pedutech.com","OTP is 4444")
+        return
         userData = collection.find_one({"email": data.email})
         print("user_data----",userData)
         if userData:
