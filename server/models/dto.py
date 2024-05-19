@@ -7,7 +7,7 @@ from fastapi.responses import JSONResponse
 
 class Login(BaseModel):
     email: EmailStr
-    password: str
+    otp: str
     
 class ChangePassword(BaseModel):
     newPassword: str

@@ -23,5 +23,5 @@ app.include_router(user.router,
 
 app.include_router(project.router,
     prefix="/project",
-    tags=["User"])
+    tags=["Project"])
 

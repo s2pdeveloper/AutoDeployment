@@ -1,2 +1,5 @@
 fastapi==0.109.0
 pymongo
+fastapi-mail==1.4.1
+uvicorn==0.29.0
+pycryptodome

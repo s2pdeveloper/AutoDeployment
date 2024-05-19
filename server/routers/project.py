@@ -1,15 +1,16 @@
-from pydoc import pager
 from fastapi import APIRouter
 from models.dto import ProjectRequest
+from utils.helper import Helper
 from services.project_service import ProjectService
 
 router = APIRouter()
-projectService = ProjectService()
+helperService = Helper()
+projectService = ProjectService(helperService)
 
 @router.post("")
-async def create(data:ProjectRequest):
-    return await projectService.create(data)
+async def create():
+    return await projectService.create()
 
 @router.get("")
-async def getAll(page:int,pageNumber:int):
+async def getAll(page:str,pageNumber:str):
     return await projectService.getAll(page,pageNumber)
