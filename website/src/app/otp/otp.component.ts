@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-otp',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./otp.component.scss']
 })
 export class OtpComponent {
-
+  constructor(private routes: Router) {}
+  navigateTo(path: any) {
+    this.routes.navigate([path]);
+  }
 }

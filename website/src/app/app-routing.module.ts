@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { OtpComponent } from './otp/otp.component';
 import { LoginComponent } from './login/login.component';
+import { ProjectComponent } from './project/project.component';
 
 const routes: Routes = [
   {path:'', redirectTo: 'login', pathMatch: 'full'},
@@ -11,6 +12,9 @@ const routes: Routes = [
   {
     path:'otp',component:OtpComponent
   },
+  {
+    path: 'project', component:ProjectComponent
+  }
 ];
 
 @NgModule({
